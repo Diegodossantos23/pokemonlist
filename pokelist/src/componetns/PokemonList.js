@@ -19,6 +19,8 @@ const Title = styled.h1`
     color:slategray;
 `
 
+
+
  export const PokemonList = () => {
     return(
         <ListContainer>
@@ -29,8 +31,7 @@ const Title = styled.h1`
            <PokemonListItem/>
            <PokemonListItem/>
            <PokemonListItem/>
-           <PokemonListItem/>
-           <PokemonListItem/>
+           
         </ListContainer>
     )
 }
