@@ -7,11 +7,16 @@ const ListContainer = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:center;
-    
-    border: 1px solid gray;
-    border-radius:5px;
+    transition: 0.5s;
     
     width:400px;
+    border-radius:2rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    &:hover{
+       
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
 `
 
 const Title = styled.h1`
@@ -21,17 +26,15 @@ const Title = styled.h1`
 
 
 
- export const PokemonList = () => {
+ export const PokemonList = (props) => {
     return(
         <ListContainer>
             <Title>Pokèmons</Title>
-           <PokemonListItem/>
-           <PokemonListItem/>
-           <PokemonListItem/>
-           <PokemonListItem/>
-           <PokemonListItem/>
-           <PokemonListItem/>
-           
+            {
+                props.pokemons.results.map((poke) => {
+                    return <PokemonListItem key={poke.name} name={poke.name } />
+                })
+            }
         </ListContainer>
     )
 }

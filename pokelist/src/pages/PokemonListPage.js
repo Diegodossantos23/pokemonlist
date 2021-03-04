@@ -7,7 +7,7 @@ import { PokemonList } from '../componetns/PokemonList'
  export const PokemonListPage = () => {
     return(
         <div>
-            <PokemonList/>
+            <PokemonList pokemons={mockList}/>
         </div>
     )
 }

@@ -5,29 +5,47 @@ const PokemonContainer = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    
+    justify-content:space-evenly;
     margin: 20px;
-    
-    border: 1px solid gray;
+   
     border-radius:5px;
-  
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    transition: 0.5s;
+
+    div{
+        width: 50px;
+    }
+
     img{
-        width:100px;
-        border-radius:5px;
+        width:50px;
+        border-radius:100%;
         margin: 10px;
+
+        
+        &:hover{
+            cursor:pointer;
+            transition: 0.5s;
+            width:70px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
     }
 
     &:hover{
-        cursor: pointer;
-    }
-
+           
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
+        
 `
 
- export const PokemonListItem = () => {
+ export const PokemonListItem = (props) => {
     return(
         <PokemonContainer>
-            <img src="https://cdn.alfabetajuega.com/wp-content/uploads/2019/09/pokemon-bulbasaur-3d.png" alt="Bubassauro"/>
-            <p>Bulbasaur</p>
+            <div>
+                <img src="https://img.elo7.com.br/product/original/28E57AD/pokebola-scanncut.jpg" alt="Pokebola"/>
+            </div>
+            <div>
+                <p>{props.name}</p>
+            </div>
         </PokemonContainer>
     )
 }
