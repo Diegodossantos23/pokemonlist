@@ -17,6 +17,15 @@ const ListContainer = styled.div`
        
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
+
+    @media (max-width: 800px){
+        width:340px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        align-items:center;    
+    }
 `
 
 const Title = styled.h1`
