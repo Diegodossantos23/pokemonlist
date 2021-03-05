@@ -1,6 +1,6 @@
 import React from 'react'
-// import { PokemonDetailPage } from './pages/PokemonDetailPage'
-import { PokemonListPage } from './pages/PokemonListPage'
+import { PokemonDetailPage } from './pages/PokemonDetailPage'
+// import { PokemonListPage } from './pages/PokemonListPage'
 import styled from 'styled-components'
 
 const AppContainer = styled.div`
@@ -19,8 +19,8 @@ const AppContainer = styled.div`
 const App = () => {
   return (
     <AppContainer>
-      <PokemonListPage/>
-      {/* <PokemonDetailPage/> */}
+      {/* <PokemonListPage/> */}
+      <PokemonDetailPage/>
     </AppContainer>
   );
 }

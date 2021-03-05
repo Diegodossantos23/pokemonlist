@@ -15,18 +15,30 @@ const StatusDataContainer = styled.div`
         cursor: pointer;
     }
 `
-const Status = styled.p`
+
+const Title = styled.h1`
+    text-align:center;
+    color:slategray;
+    margin: 5px;
+`  
+
+const Stats = styled.p`
     text-align:center;
     margin: 7px;
     
 `  
 
- export const PokemonStatusData = () => {
+ export const PokemonStatusData = (props) => {
     return(
         <StatusDataContainer>
-            <Status>Attack = 23</Status>
-            <Status>Health = 19</Status>
-            <Status>Defense = 79</Status>
+            <Title>Stats</Title>
+             {
+                 props.stats.map((eachStats) =>{
+                     return <Stats> {eachStats.stat.name} = {eachStats.base_stat}</Stats>
+                 })
+             }
+            
+           
         </StatusDataContainer>
     )
 }

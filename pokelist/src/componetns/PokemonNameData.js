@@ -21,14 +21,19 @@ const Title = styled.h1`
 const Type = styled.p`
     text-align:center;
     margin: 5px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;`  
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    `  
 
- export const PokemonNameData= () => {
+
+ export const PokemonNameData= (props) => {
     return(
         <NameDataContainer>
-            <Title >Bulbassaur</Title >
-            <Type>Poison</Type>
-            <Type>Glass</Type>
+            <Title >{props.name}</Title >
+            {
+                props.types.map((eachType) => {
+                    return <Type>{eachType.type.name}</Type> 
+                })
+            }           
         </NameDataContainer>
     )
 }
