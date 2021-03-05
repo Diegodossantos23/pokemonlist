@@ -8,7 +8,7 @@ const ListContainer = styled.div`
     flex-direction:column;
     justify-content:center;
     transition: 0.5s;
-    
+    background-color:#fff;
     width:400px;
     border-radius:2rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;

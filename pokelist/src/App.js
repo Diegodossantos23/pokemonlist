@@ -12,6 +12,8 @@ const AppContainer = styled.div`
 
   height:100vh;
 
+  background-color:#D9D9D9;
+
 `
 
 const App = () => {
