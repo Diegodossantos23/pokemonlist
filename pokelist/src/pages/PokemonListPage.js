@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PokemonList } from '../componetns/PokemonList'
 
 
 
 
  export const PokemonListPage = () => {
-    return(
+    const [pokemonList, setPokemonList] = useState(mockList);  
+  return(
         <div>
-            <PokemonList pokemons={mockList}/>
+            <PokemonList pokemons={pokemonList}/>
         </div>
     )
 }
