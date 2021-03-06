@@ -1,12 +1,39 @@
 import React, { useState } from 'react'
 import { PokemonDetailCard } from '../componetns/PokemonDetailCard'
+import styled from 'styled-components'
+import {useHistory} from 'react-router-dom'
+const DetailPageContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+`
 
- export const PokemonDetailPage = () => {
-   const [pokemon, setPokemon ] = useState(mockPokemon);
+const GoBack = styled.button`
+  border:none;
+  padding:15px;
+  background-color:#ffff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  color: slategray;
+  margin-top:5px;
+  font-family: sans-serif;
+  transition:0.5s;
+
+  &:hover{
+    cursor:pointer;
+    color:black;
+    background-color:#f2f3f5;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+    outline: 0;
+  }
+`
+
+export const PokemonDetailPage = () => {
+  const [pokemon, setPokemon ] = useState(mockPokemon);
+  const history = useHistory();
     return(
-        <div>
+        <DetailPageContainer>
             <PokemonDetailCard pokemon={pokemon}/>
-        </div>
+            <GoBack onClick={() => history.push("/")}> VOLTAR</GoBack>
+        </DetailPageContainer>
     )
 }
 
