@@ -37,8 +37,6 @@ const Stats = styled.p`
                      return <Stats> {eachStats.stat.name} = {eachStats.base_stat}</Stats>
                  })
              }
-            
-           
         </StatusDataContainer>
     )
 }

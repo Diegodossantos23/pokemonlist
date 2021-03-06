@@ -29,6 +29,7 @@ const CardContainer = styled.div`
  export const PokemonDetailCard = (props) => {
     return(
         <CardContainer>
+            
             <PokemonImage src={props.pokemon.sprites.front_default}/>
             <PokemonNameData
                 name={props.pokemon.name}
