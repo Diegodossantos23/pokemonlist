@@ -30,6 +30,7 @@ export const PokemonDetailPage = () => {
   const [pokemon, setPokemon ] = useState(mockPokemon);
   const history = useHistory();
   const params = useParams();
+  console.log(`Params: ${params.nome}`)
 
     return(
         <DetailPageContainer>

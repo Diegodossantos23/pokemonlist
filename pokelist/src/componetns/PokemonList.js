@@ -40,6 +40,7 @@ const Title = styled.h1`
         <ListContainer>
             <Title>Pokèmons</Title>
             {
+                props.pokemons.results && 
                 props.pokemons.results.map((poke) => {
                     return <PokemonListItem key={poke.name} name={poke.name } />
                 })

@@ -1,9 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { PokemonList } from '../componetns/PokemonList'
+import axios from 'axios'
 
  export const PokemonListPage = () => {
-    const [pokemonList, setPokemonList] = useState(mockList);  
+    const [pokemonList, setPokemonList] = useState({});  
     
+
+    //Requisição raiz
+    useEffect(() =>{
+        axios
+        .get("https://pokeapi.co/api/v2/pokemon")
+        .then((res) =>  setPokemonList(res.data))
+        .catch((err) => alert(err.response.message))
+    }, [])
+
+
     return(
         <div>
             <PokemonList pokemons={pokemonList}/>
@@ -11,34 +22,3 @@ import { PokemonList } from '../componetns/PokemonList'
     )
 }
 
-const mockList = {
-    "count": 1118,
-    "next": "https://pokeapi.co/api/v2/pokemon?offset=6&limit=6",
-    "previous": null,
-    "results": [
-      {
-        "name": "bulbasaur",
-        "url": "https://pokeapi.co/api/v2/pokemon/1/"
-      },
-      {
-        "name": "ivysaur",
-        "url": "https://pokeapi.co/api/v2/pokemon/2/"
-      },
-      {
-        "name": "venusaur",
-        "url": "https://pokeapi.co/api/v2/pokemon/3/"
-      },
-      {
-        "name": "charmander",
-        "url": "https://pokeapi.co/api/v2/pokemon/4/"
-      },
-      {
-        "name": "charmeleon",
-        "url": "https://pokeapi.co/api/v2/pokemon/5/"
-      },
-      {
-        "name": "charizard",
-        "url": "https://pokeapi.co/api/v2/pokemon/6/"
-      }
-    ]
-  }
