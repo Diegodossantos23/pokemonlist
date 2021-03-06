@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { PokemonDetailCard } from '../componetns/PokemonDetailCard'
 import styled from 'styled-components'
-import {useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 const DetailPageContainer = styled.div`
   display:flex;
   flex-direction:column;
@@ -29,6 +29,8 @@ const GoBack = styled.button`
 export const PokemonDetailPage = () => {
   const [pokemon, setPokemon ] = useState(mockPokemon);
   const history = useHistory();
+  const params = useParams();
+
     return(
         <DetailPageContainer>
             <PokemonDetailCard pokemon={pokemon}/>
